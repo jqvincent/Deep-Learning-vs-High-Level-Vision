@@ -1,10 +1,10 @@
-Uses the [psiTurk](https://psiturk.org/) environment.
+Human performance on our image datasets was assessed via [Amazon Mechanical Turk](https://www.mturk.com/) using the [psiTurk](https://psiturk.org/) environment.
 
-Participants are presented a gif consisting of a fixation cross during 500 ms, an image and finally a question. The image is presented during either 50, 150, 400 or 800 ms.
+Each participant was presented with a batch of .gif files. Each .gif file consisted in a fixation cross during 500 ms, an image during 50, 150, 400 or 800 ms, and a forced choice yes/no question until the participant answered. The image duration changed randomly from one presentation to the next.
 
 <div align="center">
   <img src="psiturk_example.png" height="250px" />
   <p>Layout of an example gif.</p>
 </div>
 
-The "drinking" experiment was the latest, it shows a progress bar along the experiment. This seems to be preferred by participants.
+The "drinking" experiment is the most up-to-date: it shows a progress bar along the experiment, which is preferred by participants.
