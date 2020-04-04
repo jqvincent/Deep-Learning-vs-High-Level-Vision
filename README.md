@@ -1,6 +1,3 @@
-# Deep Learning vs High Level Vision
+# Deep Learning vs High-Level Vision
 
-This project contains both a computational (Deep Learning models) and psychophysics part (psiTurk).
-
-following "Can Deep Learning Revognize Subtle Human Activities?" 
-or not
+This repository contains the code used for the publication ["Can Deep Learning Revognize Subtle Human Activities?"](https://arxiv.org/abs/2003.13852).
