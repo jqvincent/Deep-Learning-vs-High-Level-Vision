@@ -11,4 +11,4 @@ The misclassification rate allows to remove biases of our dataset, as described 
 
 ### Grad-CAM
 
-Adapted from the implementation of [jacobgil](https://github.com/jacobgil/keras-grad-cam), based on [Selvaraju et al. 2017](https://arxiv.org/abs/1610.02391).
+**gradcam\_loop.py** is adapted from the implementation of [jacobgil](https://github.com/jacobgil/keras-grad-cam), based on [Selvaraju et al. 2017](https://arxiv.org/abs/1610.02391).
