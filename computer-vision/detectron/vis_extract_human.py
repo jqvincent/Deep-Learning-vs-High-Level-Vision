@@ -149,6 +149,7 @@ def vis_extract_func(
                 x_coor = (kps[0] - bbox[0]) / 256 
                 y_coor = (kps[1] - bbox[1]) / 256 
 
+                #extracted_kps = np.concatenate((np.asarray([bbox_width/255, bbox_height/255]), x_coor, y_coor, kps[3]), axis=0)
                 extracted_kps = np.concatenate((np.asarray([bbox_width/255, bbox_height/255]), x_coor[:11], y_coor[:11], kps[3][:11]), axis=0)
                 #print('extracted_kps', extracted_kps)                
                 #extracted_kps = [item for sublist in extracted_kps for item in sublist]

@@ -45,11 +45,11 @@ def vis_extract_func(
         ext='pdf', out_when_no_box=False):
     """Visual debugging of detections."""
     #ADDED declare variables to return
-    textbox_assigned = 0
-    textbox_feats = None
+    beveragebox_assigned = 0
+    beveragebox_feats = None
     one_human_assigned = 0
     human_feats = None
-    textbox = None
+    beveragebox = None
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -99,14 +99,14 @@ def vis_extract_func(
         if score < thresh:
             continue
 
-        #ADDED the text material can be either: tv (i=63), laptop (64), cell phone (68), book (74)
-        is_txtmtrl = classes[i]==63 or classes[i]==64 or classes[i]==68 or classes[i]==74
-        if is_txtmtrl and not textbox_assigned:
-            textbox_feats = feats[i]
+        # 'bottle' (40), 'wine glass' (41), 'cup' (42)
+        is_beverage = classes[i]==40 or classes[i]==41 or classes[i]==42
+        if is_beverage and not beveragebox_assigned:
+            beveragebox_feats = feats[i]
             normbbox = bbox/256
-            textbox_xmid = (normbbox[2] + normbbox[0]) / 2
-            textbox_ymid = (normbbox[3] + normbbox[1]) / 2
-            textbox = np.concatenate((normbbox,textbox_xmid,textbox_ymid), axis=None)
+            beveragebox_xmid = (normbbox[2] + normbbox[0]) / 2
+            beveragebox_ymid = (normbbox[3] + normbbox[1]) / 2
+            beveragebox = np.concatenate((normbbox,beveragebox_xmid,beveragebox_ymid), axis=None)
 
             # show box (off by default)
             ax.add_patch(
@@ -150,7 +150,7 @@ def vis_extract_func(
                         alpha=0.5)
                     ax.add_patch(polygon)
 
-            textbox_assigned = 1
+            beveragebox_assigned = 1
 
         #ADDED human features are extracted, although we prefer to use "infer_simple_extract_human" for that
         if classes[i]==1 and not one_human_assigned:
@@ -207,9 +207,9 @@ def vis_extract_func(
                     line, color=colors[len(kp_lines) + 1], linewidth=1.0,
                     alpha=0.7)
 
-    if textbox_assigned:
+    if beveragebox_assigned:
         output_name = os.path.basename(im_name) + '.' + ext
         fig.savefig(os.path.join(output_dir, '{}'.format(output_name)), dpi=dpi)
         plt.close('all')
 
-    return textbox, textbox_feats, textbox_assigned, human_feats, one_human_assigned
+    return beveragebox, beveragebox_feats, beveragebox_assigned, human_feats, one_human_assigned

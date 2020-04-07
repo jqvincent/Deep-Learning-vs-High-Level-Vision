@@ -47,7 +47,7 @@ import detectron.core.test_engine as infer_engine
 import detectron.datasets.dummy_datasets as dummy_datasets
 import detectron.utils.c2 as c2_utils
 import tools.im_detect_features as detect_extract #ADDED replaces infer_engine.im_detect_all
-import tools.vis_extract_reading as vis_extract
+import tools.vis_extract_drinking as vis_extract
 c2_utils.import_detectron_ops()
 
 # OpenCL may be enabled by default in OpenCV3; disable it because it's not
@@ -198,19 +198,19 @@ def main(args):
         if textbox_assigned:
             feats_tab.append([np.concatenate([textbox_feats.flatten()]),im_name])
 
-    with open('extract-features/textbox_boundingbox.pkl', 'wb') as f:
+    with open('extract-features/beverage_boundingbox.pkl', 'wb') as f:
         pickle.dump(bx_tab, f)
     with open('extract-features/missed_box.pkl', 'wb') as f:
         pickle.dump(missed_bx, f)
-    with open('extract-features/human-txtbox-combined.pkl', 'wb') as f:
+    with open('extract-features/human-beverage-combined.pkl', 'wb') as f:
         pickle.dump(combined_feats_tab, f)
-    with open('extract-features/textbox_features.pkl', 'wb') as f:
+    with open('extract-features/beverage_features.pkl', 'wb') as f:
         pickle.dump(feats_tab, f)
 
     print('bx_tab LENGTH', len(bx_tab))
     print('missed_bx LENGTH', len(missed_bx))
     print('combined_feats_tab LENGTH', len(combined_feats_tab))
-    print('read_feats_pickle LENGTH', len(feats_tab))
+    print('drinking_feats_pickle LENGTH', len(feats_tab))
 
 
 if __name__ == '__main__':

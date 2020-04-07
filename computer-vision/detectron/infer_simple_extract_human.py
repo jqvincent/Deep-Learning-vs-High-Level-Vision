@@ -46,7 +46,7 @@ from detectron.utils.timer import Timer
 import detectron.core.test_engine as infer_engine
 import detectron.datasets.dummy_datasets as dummy_datasets
 import detectron.utils.c2 as c2_utils
-import tools.im_detect_w_features as detect_extract #ADDED replaces infer_engine.im_detect_all
+import tools.im_detect_features as detect_extract #ADDED replaces infer_engine.im_detect_all
 import tools.vis_extract_human as vis_extract_hmn
 import detectron.utils.vis as vis_utils
 c2_utils.import_detectron_ops()
@@ -199,18 +199,18 @@ def main(args):
             missed_human.append(im_name)
 
         if one_human_assigned:
-            feats_tab.append(np.concatenate([human_feats.flatten()]))
+            feats_tab.append([im_name,np.concatenate([human_feats.flatten()])])
 
-    with open('extract-features/_kps_pickle', 'wb') as f:
+    with open('extract-features/kps.pkl', 'wb') as f:
         pickle.dump(kps_tab, f)
-    with open('extract-features/_missed_human', 'wb') as f:
+    with open('extract-features/missed_human.pkl', 'wb') as f:
         pickle.dump(missed_human, f)
-    with open('extract-features/_human_feats_pickle', 'wb') as f:
+    with open('extract-features/human_features.pkl', 'wb') as f:
         pickle.dump(feats_tab, f)
 
     print('kps_tab LENGTH', len(kps_tab))
     print('missed_human LENGTH', len(missed_human))
-    print('read_feats_pickle LENGTH', len(feats_tab))
+    print('features LENGTH', len(feats_tab))    
 
 
 if __name__ == '__main__':

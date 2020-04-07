@@ -9,7 +9,7 @@ The scripts are run similarly to `tools/infer_simple.py` as described in [Detect
 
 #### Extracting the person in the picture
 
-We use the model giving best performance on the COCO dataset keypoints challenge, according to detectron's [model zoo](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md). Here, the selected model is `e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml`.
+We use the model giving best performance on the COCO Keypoint Detection Task, according to detectron's [model zoo](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md). Here, the selected model is `e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml`.
 
 ```
 python tools/infer_simple_extract_human.py \
@@ -31,6 +31,8 @@ The model is applied to all <em> .jpg</em> images in the `demo/reading_gray/trai
 
 #### Extracting the reading material in the picture
 
+We use the model giving best performance on the COCO Object Detection Task, according to detectron's [model zoo](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md). Here, the selected model is `e2e_mask_rcnn_X-101-64x4d-FPN_1x.yaml`.
+
 ```
 python tools/infer_simple_extract_reading.py 
 	--cfg configs/12_2017_baselines/e2e_mask_rcnn_X-101-64x4d-FPN_1x.yaml \
@@ -41,16 +43,14 @@ python tools/infer_simple_extract_reading.py
 	demo/reading_rgb/train/yes/ 
 ```
 
-The same model (e2e_mask_rcnn_X-101-64x4d-FPN_1x.yaml) is used both for the main reading material in the  <em>reading</em> activity and main the beverage in the <em>drinking</em> activity.
-"Main" refers to the largest bounding box, among the boxes with a score that is higher than some threshold (set by --thresh) in the COCO categories of interest.
-Hence, the usage for `tools/infer_simple_extract_drinking.py` is similar to `tools/infer_simple_extract_reading.py` described above.
-
-
-
-`vis_extract_human.py`, `vis_extract_reading.py` and `vis_extract_drinking.py` are all the same scripts, originating from `/utils/vis.py`, except that they return keypoints, bounding box and features for a person, a reading material (book, cell phone, laptop, TV) or a beverage (cup, wine glass, bottle), respectively.
-
-
 <div align="center">
   <img src="example_read_txtbx.png" width="250px" />
   <p>Example output showing segmentation of the book in the picture.</p>
 </div>
+
+
+#### Extracting the beverage in the picture
+
+Same as extracting the reading material, except that we retain the "cup", "wine glass", or "bottle" categories, instead of the "book", "cell phone", "laptop" or "TV" categories in the case of reading.
+
+Use `tools/infer_simple_extract_drinking.py` instead of `tools/infer_simple_extract_reading.py` and adjust the image folder. The model configuration and weights are the same as for <em> reading</em>.
