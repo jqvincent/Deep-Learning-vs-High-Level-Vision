@@ -26,7 +26,7 @@ All `infer\_simple\_extract\_X.py` scripts call `im\_detect\_features.py`, which
 
 Usage for extracting features, bounding box and keypoints from the reading material in the picture:
 
-``
+```
 python tools/infer_simple_extract_reading.py 
 	--cfg configs/12_2017_baselines/e2e_mask_rcnn_X-101-64x4d-FPN_1x.yaml \
 	--output-dir demo/output/reading_rgb/train/yes/ \
@@ -34,7 +34,7 @@ python tools/infer_simple_extract_reading.py
 	--wts https://dl.fbaipublicfiles.com/detectron/36494496/12_2017_baselines/e2e_mask_rcnn_X-101-64x4d-FPN_1x.yaml.07_50_11.fkwVtEvg/output/train/coco_2014_train%3Acoco_2014_valminusminival/generalized_rcnn/model_final.pkl \
 	--thresh 0.2 \
 	demo/reading_rgb/train/yes/ 
-``
+```
 
 The same model (e2e_mask_rcnn_X-101-64x4d-FPN_1x.yaml) is used both for the main reading material in the  <em>reading</em> activity and main the beverage in the <em>drinking</em> activity.
 "Main" refers to the largest bounding box, among the boxes with a score that is higher than some threshold (set by --thresh) in the COCO categories of interest.
