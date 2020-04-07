@@ -5,7 +5,7 @@ The scripts are run similarly to `tools/infer_simple.py` as described in [Detect
 
 - `vis_extract_X.py` returns features, bounding box and keypoints from the category of interest. It works in pair with `infer_simple_extract_X.py`, where X replaces `human`, `reading` or `drinking` respectively. 
 
-- classify\_features
+- The folder **extract\_features** contains code for classifying the features extracted using Detectron.
 
 #### Extracting the person in the picture
 
