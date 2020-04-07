@@ -51,6 +51,6 @@ python tools/infer_simple_extract_reading.py
 
 #### Extracting the beverage in the picture
 
-Same as extracting the reading material, except that we retain the "cup", "wine glass", or "bottle" categories, instead of the "book", "cell phone", "laptop" or "TV" categories in the case of reading.
+Same as extracting the reading material, except that we retain the "cup", "wine glass", or "bottle" categories, instead of the "book", "cell phone", "laptop" or "TV" categories in the case of <em> reading</em>.
 
 Use `tools/infer_simple_extract_drinking.py` instead of `tools/infer_simple_extract_reading.py` and adjust the image folder. The model configuration and weights are the same as for <em> reading</em>.
