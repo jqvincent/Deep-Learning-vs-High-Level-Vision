@@ -1,7 +1,7 @@
-Follow [instructions from Detectron](https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md) to set up the environment. 
-The scripts are run similarly to `tools/infer_simple.py`, as described in [Detectron/GETTING\_STARTED.md ](https://github.com/facebookresearch/Detectron/blob/master/GETTING_STARTED.md).
+Follow [Detectron/INSTALL.md](https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md) to set up the environment. 
+The scripts are run similarly to `tools/infer_simple.py` as described in [Detectron/GETTING\_STARTED.md ](https://github.com/facebookresearch/Detectron/blob/master/GETTING_STARTED.md).
 
-Usage for extracting features, bounding box and keypoints from the main person in the picture:
+#### Extracting the person in the picture
 
 ```
 python tools/infer_simple_extract_human.py \
@@ -14,9 +14,7 @@ python tools/infer_simple_extract_human.py \
 	demo/reading_gray/train/yes/ 
 ```
 
-The keypoints and features of the main person on the image are saved into pkl files. The main person corresponds to the largest bounding box, among the boxes with a score in the person category that is higher than some threshold (set by --thresh).
-
-The model is applied to all <em> .jpg</em> images in the `demo/reading_gray/train/yes/` directory.
+The model is applied to all <em> .jpg</em> images in the `demo/reading_gray/train/yes/` directory. The keypoints, bounding box and features of the main person on the image are saved into <em> .pkl</em> files. The main person corresponds to the largest bounding box, among the boxes with a score in the person category that is higher than some threshold (set by --thresh).
 
 We use the model giving best performance on the COCO dataset keypoints challenge, according to the [model zoo](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md). Here, the selected model is `e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml`.
 
