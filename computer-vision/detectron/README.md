@@ -1,6 +1,12 @@
 Follow [Detectron/INSTALL.md](https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md) to set up the environment. 
 The scripts are run similarly to `tools/infer_simple.py` as described in [Detectron/GETTING\_STARTED.md ](https://github.com/facebookresearch/Detectron/blob/master/GETTING_STARTED.md).
 
+- `im_detect_features.py` returns the features of the region proposals from any category, like `detectron/core/test.py`. It is used in all three activities, <em> drinking</em>, <em> reading</em> or <em> sitting</em>.
+
+- `vis_extract_X.py` works in pair with `infer_simple_extract_X.py`, where X replaces `human`, `reading` or `drinking` respectively. `vis_extract_X.py` returns features, bounding box and keypoints from the category of interest.
+
+- `infer_simple_extract_X.py` calls `vis_extract_X.py` with X replacing `human`, `reading` or `drinking` respectively.
+
 #### Extracting the person in the picture
 
 We use the model giving best performance on the COCO dataset keypoints challenge, according to detectron's [model zoo](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md). Here, the selected model is `e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml`.
@@ -20,12 +26,8 @@ The model is applied to all <em> .jpg</em> images in the `demo/reading_gray/trai
 
 <div align="center">
   <img src="example_read_person.png" width="250px" />
-  <p>Example output showing keypoints on the person.</p>
+  <p>Example output showing the person's keypoints.</p>
 </div>
-
-`infer_simple_extract_X.py` calls `vis_extract_X.py` with X replacing `human`, `reading` or `drinking` respectively.
-
-All `infer_simple_extract_X.py` scripts call `im_detect_features.py`, which originates from `detectron/core/test.py` and returns the features of the region proposals.
 
 #### Extracting the reading material in the picture
 
@@ -46,11 +48,6 @@ Hence, the usage for `tools/infer_simple_extract_drinking.py` is similar to `too
 
 
 `vis_extract_human.py`, `vis_extract_reading.py` and `vis_extract_drinking.py` are all the same scripts, originating from `/utils/vis.py`, except that they return keypoints, bounding box and features for a person, a reading material (book, cell phone, laptop, TV) or a beverage (cup, wine glass, bottle), respectively.
-
-<div align="center">
-  <img src="example_read_person.png" width="250px" />
-  <p>Example output showing keypoints on the person.</p>
-</div>
 
 
 <div align="center">
