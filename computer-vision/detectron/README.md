@@ -3,9 +3,9 @@ The scripts are run similarly to `tools/infer_simple.py` as described in [Detect
 
 - `im_detect_features.py` returns the features of the region proposals from any category, like `detectron/core/test.py`. It is used in all three activities, <em> drinking</em>, <em> reading</em> or <em> sitting</em>.
 
-- `vis_extract_X.py` works in pair with `infer_simple_extract_X.py`, where X replaces `human`, `reading` or `drinking` respectively. `vis_extract_X.py` returns features, bounding box and keypoints from the category of interest.
+- `vis_extract_X.py` returns features, bounding box and keypoints from the category of interest. It works in pair with `infer_simple_extract_X.py`, where X replaces `human`, `reading` or `drinking` respectively. 
 
-- `infer_simple_extract_X.py` calls `vis_extract_X.py` with X replacing `human`, `reading` or `drinking` respectively.
+- classify\_features
 
 #### Extracting the person in the picture
 
