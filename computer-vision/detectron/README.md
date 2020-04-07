@@ -3,7 +3,7 @@ The scripts are run similarly to `tools/infer_simple.py`, as described in [Detec
 
 Usage for extracting features, bounding box and keypoints from the main person in the picture:
 
-``
+```
 python tools/infer_simple_extract_human.py \
 	--cfg configs/12_2017_baselines/e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml \
 	--output-dir demo/output/reading_gray/train/yes/ \
@@ -12,7 +12,7 @@ python tools/infer_simple_extract_human.py \
 	--thresh 0.4 \
 	--kp-thresh 1.3 \
 	demo/reading_gray/train/yes/ 
-``
+```
 
 The keypoints and features of the main person on the image are saved into pkl files. The main person corresponds to the largest bounding box, among the boxes with a score in the person category that is higher than some threshold (set by --thresh).
 
