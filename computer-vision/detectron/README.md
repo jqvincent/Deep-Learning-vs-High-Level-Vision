@@ -2,6 +2,7 @@ Follow [instructions from Detectron](https://github.com/facebookresearch/Detectr
 The scripts are run similarly to `tools/infer_simple.py`, as described in [Detectron/GETTING\_STARTED.md ](https://github.com/facebookresearch/Detectron/blob/master/GETTING_STARTED.md).
 
 Usage for extracting features, bounding box and keypoints from the main person in the picture:
+
 ``
 python tools/infer_simple_extract_human.py \
 	--cfg configs/12_2017_baselines/e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml \
@@ -24,6 +25,7 @@ All `infer\_simple\_extract\_X.py` scripts are called by their respective `vis\_
 All `infer\_simple\_extract\_X.py` scripts call `im\_detect\_features.py`, which originates from `detectron/core/test.py` and returns the features of the region proposals.
 
 Usage for extracting features, bounding box and keypoints from the reading material in the picture:
+
 ``
 python tools/infer_simple_extract_reading.py 
 	--cfg configs/12_2017_baselines/e2e_mask_rcnn_X-101-64x4d-FPN_1x.yaml \
