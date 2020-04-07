@@ -3,6 +3,8 @@ The scripts are run similarly to `tools/infer_simple.py` as described in [Detect
 
 #### Extracting the person in the picture
 
+We use the model giving best performance on the COCO dataset keypoints challenge, according to detectron's [model zoo](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md). Here, the selected model is `e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml`.
+
 ```
 python tools/infer_simple_extract_human.py \
 	--cfg configs/12_2017_baselines/e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml \
@@ -16,13 +18,16 @@ python tools/infer_simple_extract_human.py \
 
 The model is applied to all <em> .jpg</em> images in the `demo/reading_gray/train/yes/` directory. The keypoints, bounding box and features of the main person on the image are saved into <em> .pkl</em> files. The main person corresponds to the largest bounding box, among the boxes with a score in the person category that is higher than some threshold (set by --thresh).
 
-We use the model giving best performance on the COCO dataset keypoints challenge, according to the [model zoo](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md). Here, the selected model is `e2e_keypoint_rcnn_X-101-32x8d-FPN_s1x.yaml`.
+<div align="center">
+  <img src="example_read_person.png" width="250px" />
+  <p>Example output showing keypoints on the person.</p>
+</div>
 
-All `infer\_simple\_extract\_X.py` scripts are called by their respective `vis\_extract\_X.py` scripts, where X denotes `human`, `reading` or `drinking`.
+`infer_simple_extract_X.py` calls `vis_extract_X.py` with X replacing `human`, `reading` or `drinking` respectively.
 
-All `infer\_simple\_extract\_X.py` scripts call `im\_detect\_features.py`, which originates from `detectron/core/test.py` and returns the features of the region proposals.
+All `infer_simple_extract_X.py` scripts call `im_detect_features.py`, which originates from `detectron/core/test.py` and returns the features of the region proposals.
 
-Usage for extracting features, bounding box and keypoints from the reading material in the picture:
+#### Extracting the reading material in the picture
 
 ```
 python tools/infer_simple_extract_reading.py 
