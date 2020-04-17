@@ -1,4 +1,4 @@
-This repository contains the code used for the publication ["Can Deep Learning Recognize Subtle Human Activities?"](https://arxiv.org/abs/2003.13852).
+This repository contains the code and images used for the publication ["Can Deep Learning Recognize Subtle Human Activities?"](https://arxiv.org/abs/2003.13852).
 
 <p align="center"><b> Summary</b></p>
 
