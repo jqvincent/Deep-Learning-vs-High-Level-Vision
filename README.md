@@ -1,6 +1,6 @@
 This repository contains the code used for the publication ["Can Deep Learning Recognize Subtle Human Activities?"](https://arxiv.org/abs/2003.13852).
 
-<center>#### Summary</center>
+<p align="center">#### Summary</p>
 
 Our work builds on the observation that image datasets used in machine learning contain many biases. Those biases help convolutional neural networks to classify images. For example, in the UCF101 dataset, algorithms can rely exclusively on the background color to classify human activities. 
 
