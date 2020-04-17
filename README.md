@@ -22,7 +22,7 @@ The ground truth labels for each image was created by asking 3 participants to a
 
 <div align="center">
   <img src="Fig4.jpg" height="250px" />
-  <p>Images were presented to human participants; each trial consisted of fixation (500 ms), \n image presentation (50, 150, 400, or 800 ms), and a forced choice yes/no question.</p>
+  <p>Images were presented to human participants; each trial consisted of fixation (500 ms), <br> image presentation (50, 150, 400, or 800 ms), and a forced choice yes/no question.</p>
 </div>
 
 
