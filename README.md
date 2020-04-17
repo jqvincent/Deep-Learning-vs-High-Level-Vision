@@ -1,1 +1,28 @@
 This repository contains the code used for the publication ["Can Deep Learning Recognize Subtle Human Activities?"](https://arxiv.org/abs/2003.13852).
+
+### Summary
+
+Our work builds on the observation that image datasets used in machine learning contain many biases. Those biases help convolutional neural networks to classify images. For example, in the UCF101 dataset, algorithms can rely exclusively on the background color to classify human activities. 
+
+<div align="center">
+  <img src="ucf101-example.png" height="250px" />
+  <p>Activities from the UCF101 dataset contain low-level biases. Classifiers may discriminate solely on background color.</p>
+</div>
+
+To address this issue, we followed a rigorous method to build three image datasets corresponding to three human behaviors: drinking, reading, and sitting. 
+
+We reduced biases in our image datasets by applying many cross-validations of a fine-tuned deep convolutional network ([computer-vision/keras/misclassification\_rate](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/tree/master/computer-vision/keras) and [computer-vision/matlab/alexnet_misclass_rate.m](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/blob/master/computer-vision/matlab/alexnet_misclass_rate.m)). The many cross-validations allow to rank images along their misclassification rate. We then excluded images that were classified too easily (low misclassification rate). Thus, we obtained datasets that were less biased, more difficult to classify by algorithms. 
+
+<div align="center">
+  <img src="Fig1_v2.jpg" height="250px" />
+  <p>Example images from our dataset. The models misclassified the bottom left, middle top, and bottom right pictures, whereas humans correctly classified all six pictures.</p>
+</div>
+
+The ground truth labels for each image was created by asking 3 participants to assign each image to a yes or no class for each action. We also conducted a separate psychophysics experiment ([human-vision](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/tree/master/human-vision))
+
+<div align="center">
+  <img src="Fig4.jpg" height="250px" />
+  <p>Images were presented to human participants; each trial consisted of fixation (500 ms), image presentation (50, 150, 400, or 800 ms), and a forced choice yes/no question.</p>
+</div>
+
+
