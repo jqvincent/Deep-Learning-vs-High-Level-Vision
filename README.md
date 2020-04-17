@@ -5,7 +5,7 @@ This repository contains the code used for the publication ["Can Deep Learning R
 Our work builds on the observation that image datasets used in machine learning contain many biases. Those biases help convolutional neural networks to classify images. For example, in the UCF101 dataset, algorithms can rely on the background color to classify human activities. 
 
 <div align="center">
-  <img src="ucf101-example.png" height="130px" />
+  <img src="ucf101-example.png" height="110px" />
   <p>Activities from the UCF101 dataset contain low-level biases.<br> Classifiers may discriminate solely on background color.</p>
 </div>
 
