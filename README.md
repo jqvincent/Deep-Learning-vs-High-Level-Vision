@@ -6,16 +6,14 @@ Our work builds on the observation that image datasets used in machine learning 
 
 <div align="center">
   <img src="ucf101-example.png" height="110px" />
-  <p align="left">Activities from the UCF101 dataset contain low-level biases.<br> Classifiers may discriminate solely on background color.</p>
 </div>
 
 
 
-To address this issue, we followed a rigorous method to build three image datasets corresponding to three human behaviors: drinking, reading, and sitting. 
+To address this issue, we followed a rigorous method to build three image datasets corresponding to three human behaviors: drinking, reading, and sitting. Here are some example images from our dataset. The models misclassified the bottom left, middle top, <br> and bottom right pictures, whereas humans correctly classified all six pictures.
 
 <div align="center">
   <img src="Fig1_v2.jpg" height="450px" />
-  <p>Example images from our dataset. The models misclassified the bottom left, middle top, <br> and bottom right pictures, whereas humans correctly classified all six pictures.</p>
 </div>
 
 We reduced biases in our image datasets by applying 100 to 300 cross-validations of a fine-tuned deep convolutional network ([computer-vision/keras/misclassification\_rate](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/tree/master/computer-vision/keras) and [computer-vision/matlab/alexnet_misclass_rate.m](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/blob/master/computer-vision/matlab/alexnet_misclass_rate.m)). The many cross-validations allow to rank images along their misclassification rate. We then excluded images that were classified too easily. Thus, we obtained datasets that were less biased, more difficult to classify by algorithms. 
