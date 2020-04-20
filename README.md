@@ -6,7 +6,7 @@ Our work builds on the observation that image datasets used in machine learning 
 
 <div align="center">
   <img src="ucf101-example.png" height="110px" />
-  <p>Activities from the UCF101 dataset contain low-level biases.<br> Classifiers may discriminate solely on background color.</p>
+  <p align="left">Activities from the UCF101 dataset contain low-level biases.<br> Classifiers may discriminate solely on background color.</p>
 </div>
 
 
