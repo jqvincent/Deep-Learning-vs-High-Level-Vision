@@ -11,7 +11,7 @@ Our work builds on the observation that image datasets used in machine learning 
 <br>
 <br>
 
-To address this issue, we followed a rigorous method to build three image datasets corresponding to three human behaviors: drinking, reading, and sitting. Below are some example images from our dataset. The models misclassified the bottom left, middle top, <br> and bottom right pictures, whereas humans correctly classified all six pictures.
+To address this issue, we followed a rigorous method to build three image datasets corresponding to three human behaviors: drinking, reading, and sitting. Below are some example images from our dataset. The models misclassified the bottom left, middle top, and bottom right pictures, whereas humans correctly classified all six pictures.
 
 <div align="center">
   <img src="Fig1_v2.jpg" height="450px" />
