@@ -20,7 +20,7 @@ To address this issue, we followed a rigorous method to build three image datase
 <br>
 <br>
 
-We reduced biases in our image datasets by applying 100 to 300 cross-validations of a fine-tuned deep convolutional network ([computer-vision/keras/misclassification\_rate](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/tree/master/computer-vision/keras) and [computer-vision/matlab/alexnet_misclass_rate.m](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/blob/master/computer-vision/matlab/alexnet_misclass_rate.m)). The many cross-validations allow to rank images along their misclassification rate. We then excluded images that were classified too easily. Thus, we obtained datasets that were less biased, more difficult to classify by algorithms. 
+We reduced biases in our image datasets by applying 100 to 300 cross-validations of a fine-tuned deep convolutional network ([computer-vision/keras/misclassification\_rate](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/tree/master/computer-vision/keras) and [computer-vision/matlab/alexnet_misclass_rate.m](https://github.com/jqvincent/DeepLearning-vs-HighLevelVision/blob/master/computer-vision/matlab/alexnet_misclass_rate.m)). The many cross-validations allowed to rank images along their misclassification rate. We then excluded images that were classified too easily. Thus, we obtained datasets that were less biased, more difficult to classify by algorithms. 
 
 <br>
 
