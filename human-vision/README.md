@@ -3,8 +3,8 @@ Human performance on our image datasets was assessed via [Amazon Mechanical Turk
 Each participant was presented with a batch of .gif files. Each .gif file consisted in a fixation cross during 500 ms, an image during 50, 150, 400 or 800 ms, and a forced choice yes/no question until the participant answered. The image duration changed randomly from one presentation to the next.
 
 <div align="center">
-  <img src="psiturk_example.png" height="250px" />
-  <p>Layout of an example gif.</p>
+  <img src="yes_pp480c.gif" height="250px" />
+  <p>Example gif with 800ms image presentation.</p>
 </div>
 
 The "drinking" experiment is the most up-to-date: it shows a progress bar along the experiment, which is preferred by participants.
